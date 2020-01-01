@@ -10,14 +10,14 @@ def get_db_uri(dbinfo):
 
 
 class BaseConfig:
-    DEBUG = False
+    # DEBUG = False
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'XXYYAABCD*@2SYXKD'
 
 
 class DEVConfig(BaseConfig):
-    DEBUG = True
+    # DEBUG = True
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
@@ -33,7 +33,7 @@ class DEVConfig(BaseConfig):
 
 
 class UATConfig(BaseConfig):
-    DEBUG = True
+    # DEBUG = True
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
@@ -47,7 +47,7 @@ class UATConfig(BaseConfig):
 
 
 class PRODConfig(BaseConfig):
-    DEBUG = False
+    # DEBUG = False
     db_info = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
