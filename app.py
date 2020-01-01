@@ -1,12 +1,13 @@
 from flask import Flask
 import click
 import os
+from extensions import db, init_ext
 
 from cms import init_view_cms
 from common import init_view_common
 from front import init_view_front
 from config import envs
-
+# from cms.models import CMSUser
 
 def get_env_by_os_environment(envionment):
     if envionment.find('dev') >= 0:
@@ -31,6 +32,18 @@ app.config.from_object(envs.get(env))
 init_view_cms(app)
 init_view_common(app)
 init_view_front(app)
+init_ext(app)
+
+
+# @click.command('add_cms_user')
+# @click.argument('--name', type=click.STRING, help='cms user name')
+# @click.argument('--pwd', type=click.STRING, help='cms user password')
+# @click.argument('--email', type=click.STRING, help='cms user email')
+# def add_cms_user(name, pwd, email):
+#     user = CMSUser(username = name, password = pwd, email = email)
+#     db.session.add(user)
+#     db.session.commit()
+#     print('user was inserted.')
 
 
 if __name__ == '__main__':

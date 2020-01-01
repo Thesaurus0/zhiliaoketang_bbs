@@ -25,10 +25,10 @@ class DEVConfig(BaseConfig):
         'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'qianfeng'
+        'NAME': 'zhiliao_bbs_dev'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
-    SQLALCHEMY_DATABASE_URI ='sqlite:///' + r'F:/Database_Files/sqlite/qianfeng.db'
+    # SQLALCHEMY_DATABASE_URI ='sqlite:///' + r'F:/Database_Files/sqlite/qianfeng.db'
     print('SQLALCHEMY_DATABASE_URI=' + SQLALCHEMY_DATABASE_URI)
 
 
@@ -41,7 +41,7 @@ class UATConfig(BaseConfig):
         'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'qianfeng'
+        'NAME': 'zhiliao_bbs_uat'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
 
@@ -55,7 +55,7 @@ class PRODConfig(BaseConfig):
         'PASSWORD': 'gz.1234',
         'HOST': 'localhost',
         'PORT': '3306',
-        'NAME': 'qianfeng'
+        'NAME': 'zhiliao_bbs_prod'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(db_info)
 
